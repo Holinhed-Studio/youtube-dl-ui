@@ -8,13 +8,12 @@ These instructions will help you set up youtube-dl and the user interface as wel
 
 ### Prerequisites
 
-youtube-dl-ui requires third-party materials in order to function correctly
+###youtube-dl-ui requires third-party materials in order to function correctly
 
-```
-*1. [youtube-dl](https://youtube-dl.org)
-*2. [Microsoft C++ Redistributable 2010](https://www.microsoft.com/en-US/Download/confirmation.aspx?id=14632)
-*3. [ffmpeg, ffprobe, and ffplay](https://ffbinaries.com/downloads)
-```
+1. [youtube-dl](https://youtube-dl.org)
+2. [Microsoft C++ Redistributable 2010](https://www.microsoft.com/en-US/Download/confirmation.aspx?id=14632)
+3. [ffmpeg, ffprobe, and ffplay](https://ffbinaries.com/downloads)
+
 
 ### Installing
 
