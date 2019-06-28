@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import store from '@/store'
 
 export default {
    name: 'customparams',
@@ -18,7 +17,7 @@ export default {
    },
    methods: {
       setParams() {
-         store.commit('setParams', {
+         this.$store.commit('setParams', {
             params: this.input,
          });
       }
@@ -26,8 +25,8 @@ export default {
 }
 </script>
 
-<style>
-.customparams {
+<style scoped>
+* {
    padding: 5px;
    border: 1px solid red;
 }

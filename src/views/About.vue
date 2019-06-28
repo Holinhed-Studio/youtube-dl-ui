@@ -1,5 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>About</h1>
+    <a href="https://github.com/Holinhed-Studio/youtube-dl-ui">Github repository</a>
   </div>
 </template>
