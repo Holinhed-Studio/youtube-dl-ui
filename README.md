@@ -27,7 +27,7 @@ Step 2 -- Put all binary files in the same bin folder
 ## Running from source
 ```
 yarn install
-yarn run serve
+yarn run electron:serve
 ```
 
 ## Build
