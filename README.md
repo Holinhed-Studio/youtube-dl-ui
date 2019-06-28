@@ -24,15 +24,23 @@ Step 1 -- Extract zip files to your desktop
 Step 2 -- Put all binary files in the same bin folder
 ```
 
-## Running the program
+## Running from source
+```
+yarn install
+yarn run serve
+```
 
-Launch youtube-dl-ui.exe
+## Build
+```
+yarn run build
+```
 
 ### Input a video URL and choose a format. Then click Download.
 
 ## Built With
 
 * Electron
+* VueJS
 
 ## Contributing
 
