@@ -2,7 +2,7 @@
    <div class="customparams">
       Enter custom parameters
       <input v-model="input" name="params" id="params" />
-      <button @click="setParams()">Set params</button>  
+      <button @click="setParams()">Save Changes</button>  
    </div>
 </template>
 
