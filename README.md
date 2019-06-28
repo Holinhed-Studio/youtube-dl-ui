@@ -1,29 +1,55 @@
-# youtube-dl-ui
+# youtube-dl User Interface
 
-## Project setup
-```
-yarn install
-```
+A customizable user interface for youtube-dl (YouTube downloader library)
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+## Getting Started
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+These instructions will help you set up youtube-dl and the user interface as well as ffmpeg and ffprobe.
 
-### Run your tests
+### Prerequisites
+
+youtube-dl-ui requires third-party materials in order to function correctly
+
 ```
-yarn run test
+*1. [youtube-dl](https://youtube-dl.org)
+*2. [Microsoft C++ Redistributable 2010](https://www.microsoft.com/en-US/Download/confirmation.aspx?id=14632)
+*3. [ffmpeg, ffprobe, and ffplay](https://ffbinaries.com/downloads)
 ```
 
-### Lints and fixes files
+### Installing
+
+Please download the latest release build of the youtube-dl before proceeding.
+
 ```
-yarn run lint
+Step 1 -- Extract zip files to your desktop
+Step 2 -- Put all binary files in the same bin folder
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Running the program
+
+Launch youtube-dl-ui.exe
+
+### Input a video URL and choose a format. Then click Download.
+
+## Built With
+
+* Electron
+
+## Contributing
+
+Not available at this time.
+Feel free to report issues.
+
+## Authors
+
+* **Holinhed** - *Initial work* - [Holinhed](https://github.com/Holinhed)
+
+Check the list of [contributors](https://github.com/Holinhed-Studio/youtube-dl-ui/graphs/contributors) who develop youtube-dl-ui
+
+## License
+
+This project is licensed under the GPLv3 License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Other Notes
+
+* Special thanks to the team who created the original youtube-dl and ff binaries
