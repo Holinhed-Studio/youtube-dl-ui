@@ -1,18 +1,26 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <customParams></customParams>
+  <button @click="testCall()">testCall</button>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import store from '@/store';
+import customParams from '@/components/customParams.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    customParams,
+  },
+  methods: {
+    testCall() {
+      
+      store.dispatch('testCall');
+
+    },
   }
 }
 </script>
