@@ -49,7 +49,7 @@ export default new Vuex.Store({
     execute(context) {
       //console.log(context);
 
-      console.log("Launching youtube-dl with parameters: " +
+      console.log("[YTDL] Starting, with parameters: " +
             context.state.links.join(" ") + " " +
             context.state.params.join(" "));
 
