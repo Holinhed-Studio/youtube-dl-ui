@@ -32,7 +32,7 @@ yarn run electron:serve
 
 ## Build
 ```
-yarn run build
+yarn run electron:build
 ```
 
 ### Input a video URL and choose a format. Then click Download.
