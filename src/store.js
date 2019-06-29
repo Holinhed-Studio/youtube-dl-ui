@@ -11,6 +11,7 @@ export default new Vuex.Store({
     binary: '"./bin/youtube-dl"',
     params: new Array(),
     events: new Array(),
+	links: new Array(),
   },
   mutations: {
     setParams(context, args) {
@@ -19,15 +20,19 @@ export default new Vuex.Store({
       //console.log(context.params);
       console.log("Params Set!  :" + context.params);
     },
+	getLink(context, args) {
+		const links = args.params.split(" ");
+		context.links = links;
+		console.log(context.links);		
+	}
   },
   actions: {
     testCall(context) {
 
       //console.log(context);
 
-      //console.log(context.state.params.join(" "));
-
-      exec(context.state.binary + " " + context.state.params.join(" "), (err, stdout, stderr) => {
+      console.log("Launching youtube-dl with parameters: " + context.state.params.join(" ") + context.state.links.join(" "));
+      exec(context.state.binary + " " + context.state.links.join(" "), + context.state.params.join(" "), (err, stdout, stderr) => {
 
         if (err) { console.error(err.toString()); return; }
 

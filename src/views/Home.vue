@@ -1,6 +1,7 @@
 <template>
-  <div class="home">
-    <button @click="testCall()">Execute!</button>
+ <div class="home">
+    <input v-model="link" @input="getLink()" placeholder="Insert URL"></textarea>
+    <button @click="testCall()" style="background-color:lightgreen"><b>Execute!</b></button>
   </div>
 </template>
 
@@ -10,15 +11,23 @@ import store from '@/store';
 
 export default {
   name: 'home',
-  components: {
+    components: {
     
-  },
-  methods: {
-    testCall() {
-      
-      store.dispatch('testCall');
-
     },
-  }
+    data() {
+    return {
+        link: "",
+    };
+     },
+    methods: {
+        testCall() {
+      
+        store.dispatch('testCall');
+
+        },
+        getLink() {
+        this.$store.commit('getLink', { params: this.link });
+        },
+    },
 }
 </script>
