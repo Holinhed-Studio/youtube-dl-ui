@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     testCall() {
-      store.dispatch("testCall");
+      store.dispatch("execute");
     },
 
     updateBin() {

@@ -25,7 +25,11 @@ export default new Vuex.Store({
       const links = args.params.split(" ");
       context.links = links;
       console.log(context.links);
-    }
+    },
+
+    addEvent(context, args) {
+      //TODO: Implement lol
+    },
   },
   actions: {
     updateBin(context) {
@@ -42,20 +46,19 @@ export default new Vuex.Store({
           console.log(stderr);
         });
     },
-    testCall(context) {
+    execute(context) {
       //console.log(context);
 
-      console.log(
-        "Launching youtube-dl with parameters: " +
-          context.state.links.join(" ") + " " +
-          context.state.params.join(" ")
-      );
-      exec(
-        context.state.binary + " " + context.state.links.join(" ") + " " 
-        + context.state.params.join(" "),
-        (err, stdout, stderr) => {
+      console.log("Launching youtube-dl with parameters: " +
+            context.state.links.join(" ") + " " +
+            context.state.params.join(" "));
+
+      exec(context.state.binary + " " + context.state.links.join(" ") + " " 
+            + context.state.params.join(" "), (err, stdout, stderr) => {
+          
           if (err) {
             console.error(err.toString());
+            context.state.events.push(err.toString());
             return;
           }
 
@@ -63,8 +66,7 @@ export default new Vuex.Store({
           context.state.events.push(stdout, stderr);
           console.log(stdout);
           console.log(stderr);
-        }
-      );
+        });
     }
   }
 });

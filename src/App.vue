@@ -13,14 +13,6 @@ export default {
   components: {
     switchMode,
   },
-  data() {
-    return {
-      
-    };
-  },
-  methods: {
-
-  }
 }
 </script>
 
