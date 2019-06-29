@@ -48,12 +48,12 @@ export default new Vuex.Store({
 
       console.log(
         "Launching youtube-dl with parameters: " +
-          context.state.params.join(" ") +
-          context.state.links.join(" ")
+          context.state.links.join(" ") + " " +
+          context.state.params.join(" ")
       );
       exec(
-        context.state.binary + " " + context.state.links.join(" "),
-        +context.state.params.join(" "),
+        context.state.binary + " " + context.state.links.join(" ") + " " 
+        + context.state.params.join(" "),
         (err, stdout, stderr) => {
           if (err) {
             console.error(err.toString());
