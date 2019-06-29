@@ -1,6 +1,6 @@
 <template>
  <div class="home">
-    <input v-model="link" @input="getLink()" placeholder="Insert URL"></textarea>
+    <input v-model="link" @input="getLink()" placeholder="Insert URL">
     <button @click="testCall()" style="background-color:lightgreen"><b>Execute!</b></button>
   </div>
 </template>
