@@ -49,7 +49,7 @@ Feel free to report issues.
 
 ## Authors
 
-* **Holinhed** - *Initial work* - [Holinhed](https://github.com/Holinhed)
+* **[Holinhed](https://github.com/Holinhed)** - *Initial work*
 
 Check the list of [contributors](https://github.com/Holinhed-Studio/youtube-dl-ui/graphs/contributors) who develop youtube-dl-ui
 
