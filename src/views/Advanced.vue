@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import store from '@/store';
 import customParams from '@/components/customParams.vue';
 
 export default {

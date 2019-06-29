@@ -1,9 +1,10 @@
 <template>
-   
+   <div id="eventlog">
+
+   </div>
 </template>
 
 <script>
-import store from "@/store";
 
 export default {
    name: "console",
