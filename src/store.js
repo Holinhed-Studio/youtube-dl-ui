@@ -38,7 +38,6 @@ export default new Vuex.Store({
 
           // push to event log
           context.state.events.push(stdout, stderr);
-
           console.log(stdout);
           console.log(stderr);
         });
@@ -62,7 +61,6 @@ export default new Vuex.Store({
 
           // push to event log
           context.state.events.push(stdout, stderr);
-
           console.log(stdout);
           console.log(stderr);
         }

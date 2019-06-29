@@ -1,6 +1,6 @@
 <template>
-   <div id="swtichMode">
-      <button @click="goAdvanced()" v-if="simpleUi">Go Advanced</button>
+   <div id="swtichMode" style="text-align:center">
+      <button @click="goAdvanced()" v-if="simpleUi" style="background-color:#b090e0">Go Advanced</button><br><br>
       <button @click="goSimple()" v-if="!simpleUi">Go Simple</button>
    </div>
 </template>
@@ -10,7 +10,7 @@ export default {
    name: "switchMode",
    data() {
       return {
-         simpleUi: false,
+         simpleUi: true,
       };
    },
    methods: {
