@@ -50,8 +50,9 @@ Feel free to report issues.
 ## Authors
 
 * **[Holinhed](https://github.com/Holinhed)** - *Initial work*
+* **[DovahkiinWarrior](https://github.com/Dovahkiin-Warrior)** - *Tweaks*
 
-Check the list of [contributors](https://github.com/Holinhed-Studio/youtube-dl-ui/graphs/contributors) who develop youtube-dl-ui
+Also check the list of [contributors](https://github.com/Holinhed-Studio/youtube-dl-ui/graphs/contributors) who develop youtube-dl-ui
 
 ## License
 
