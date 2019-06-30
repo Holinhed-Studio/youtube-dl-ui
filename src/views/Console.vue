@@ -1,6 +1,7 @@
 <template>
    <div id="eventlog">
-
+      
+      nothing here.
    </div>
 </template>
 
@@ -19,6 +20,10 @@ export default {
    methods: {
 
    },
+   mounted() {
+      //console.log("EVENT LOG");
+      document.title = "EVENT LOG"
+   }
 }
 </script>
 

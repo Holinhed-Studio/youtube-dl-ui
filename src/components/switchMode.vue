@@ -1,7 +1,6 @@
 <template>
-   <div id="swtichMode" style="text-align:center">
-      <button @click="goAdvanced()" v-if="simpleUi" style="background-color:#b090e0">Go Advanced</button><br><br>
-      <button @click="goSimple()" v-if="!simpleUi">Go Simple</button>
+   <div id="swtichMode">
+      <button id="switchButton" @click="changeMode()">Go {{ newMode }}</button>
    </div>
 </template>
 
@@ -10,23 +9,20 @@ export default {
    name: "switchMode",
    data() {
       return {
-         simpleUi: true,
+        newMode: "advanced"
       };
    },
    methods: {
-      goAdvanced() {
-         //console.log("hello world!");
-         this.simpleUi = false;
-         this.$router.push('/advanced');
-      },
-      goSimple() {
-         this.simpleUi = true;
-         this.$router.push('/');
+      changeMode() {
+         this.$store.state.simpleUI = !this.$store.state.simpleUI;
+         this.newMode = this.$store.state.simpleUI ? "advanced" : "simple";
       },
    }
 }
 </script>
 
-<style>
-
+<style scoped>
+#switchMode {
+   
+}
 </style>

@@ -17,17 +17,12 @@ export default {
    },
    methods: {
       setParams() {
-         this.$store.commit('setParams', {
-            params: this.input,
-         });
+         this.$store.commit('setParams', { params: this.input });
       }
    }
 }
 </script>
 
 <style scoped>
-* {
-   padding: 5px;
-   border: 1px solid red;
-}
+
 </style>

@@ -8,7 +8,8 @@ const { exec } = require("child_process");
 export default new Vuex.Store({
   state: {
     //TODO: make this get path from a config file.
-    binary: '"./bin/youtube-dl"',
+    binary: '"./bin/youtube-dl.exe"',
+    simpleUI: true,
     params: new Array(),
     events: new Array(),
     links: new Array()
@@ -18,7 +19,7 @@ export default new Vuex.Store({
       const params = args.params.split(" ");
       context.params = params;
       //console.log(context.params);
-      console.log("Params Set!  :" + context.params);
+      console.log("Params Set!  :" + context.params.toString());
     },
 
     getLink(context, args) {
@@ -29,12 +30,21 @@ export default new Vuex.Store({
 
     addEvent(context, args) {
       //TODO: Implement lol
+
+
+      
+      /*const event = {
+        type: 'STDOUT',
+        message: 'this is an event.',
+        origin: 'hell',
+      }*/
     },
   },
   actions: {
     updateBin(context) {
       console.log("Updating youtube-dl binary..."),
-        exec(context.state.binary + " " + "-U", (err, stdout, stderr) => {
+        //exec(context.state.binary + " " + "-U", (err, stdout, stderr) => {
+        exec(`"${context.state.binary}" -U`, (err, stdout, stderr) => {
           if (err) {
             console.error(err.toString());
             return;
@@ -49,12 +59,14 @@ export default new Vuex.Store({
     execute(context) {
       //console.log(context);
 
-      console.log("Launching youtube-dl with parameters: " +
-            context.state.links.join(" ") + " " +
-            context.state.params.join(" "));
+      const links = context.state.links.join(" ");
+      const params = context.state.params.join(" ");
 
-      exec(context.state.binary + " " + context.state.links.join(" ") + " " 
-            + context.state.params.join(" "), (err, stdout, stderr) => {
+      //console.log(`Launching youtube-dl with parameters: ${links} ${params}`);
+      //console.log(`${context.state.binary} "${links}" ${params}`);
+
+      //return;
+      exec(`${context.state.binary} ${links} ${params}`, (err, stdout, stderr) => {
           
           if (err) {
             console.error(err.toString());

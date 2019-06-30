@@ -1,6 +1,7 @@
 <template>
    <div id="advancedMenu">
       <customParams />
+      <button @click="openLog()">Open Event Log</button>
    </div>
 </template>
 
@@ -12,6 +13,18 @@ export default {
    components: {
       customParams,
    },
+   data() {
+      return {
+
+      };
+   },
+   methods: {
+
+      openLog() {
+         window.open("http://localhost:8080/#/eventlog");
+      },
+
+   }
 }
 </script>
 

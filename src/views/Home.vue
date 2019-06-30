@@ -1,39 +1,39 @@
 <template>
-  <div class="home" style="text-align:center">
-    <input v-model="link" @input="getLink()" placeholder="Insert URL to load" style="text-align:center" /><br><br>
-    <button @click="testCall()" style="background-color:lightgreen">
-      <b>Execute!</b>
-    </button>
-    <button @click="updateBin()" style="background-color:pink">
-      Update
-    </button>
+  <div class="home">
+    <SwitchMode />
+    <SimpleUI v-if="this.$store.state.simpleUI" />
+    <AdvancedUI v-if="!this.$store.state.simpleUI" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import store from "@/store";
+import AdvancedUI from '@/views/Advanced.vue';
+import SimpleUI from '@/views/Simple.vue';
+import SwitchMode from '@/components/switchMode.vue';
 
 export default {
   name: "home",
-  components: {},
+  components: {
+    AdvancedUI,
+    SimpleUI,
+    SwitchMode,
+  },
   data() {
     return {
-      link: ""
     };
   },
+  mounted() {
+    //window.open('http://localhost:8080/#/eventlog');
+  },
   methods: {
-    testCall() {
-      store.dispatch("execute");
-    },
 
-    updateBin() {
-        store.dispatch("updateBin");
-    },
-
-    getLink() {
-      this.$store.commit("getLink", { params: this.link });
-    }
   }
 };
 </script>
+
+<style scoped>
+.home {
+  text-align: center;
+}
+</style>
