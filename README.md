@@ -32,7 +32,7 @@ yarn run electron:serve
 
 ## Build
 ```
-yarn run build
+yarn run electron:build
 ```
 
 ### Input a video URL and choose a format. Then click Download.
@@ -49,9 +49,10 @@ Feel free to report issues.
 
 ## Authors
 
-* **Holinhed** - *Initial work* - [Holinhed](https://github.com/Holinhed)
+* **[Holinhed](https://github.com/Holinhed)** - *Initial work*
+* **[DovahkiinWarrior](https://github.com/Dovahkiin-Warrior)** - *Tweaks*
 
-Check the list of [contributors](https://github.com/Holinhed-Studio/youtube-dl-ui/graphs/contributors) who develop youtube-dl-ui
+Also check the list of [contributors](https://github.com/Holinhed-Studio/youtube-dl-ui/graphs/contributors) who develop youtube-dl-ui
 
 ## License
 
