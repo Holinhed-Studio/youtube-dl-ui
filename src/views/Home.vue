@@ -25,6 +25,10 @@ export default {
   },
   mounted() {
     //window.open('http://localhost:8080/#/eventlog');
+    document.title = "YouTube-dl UI - INDEV"
+
+    const isDevelopment = process.env.NODE_ENV !== 'production';
+
   },
   methods: {
 

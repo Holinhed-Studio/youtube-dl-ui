@@ -10,16 +10,26 @@ export default new Vuex.Store({
     //TODO: make this get path from a config file.
     binary: '"./bin/youtube-dl.exe"',
     simpleUI: true,
+    customExecute: { input: "", useCurrent: true },
     params: new Array(),
     events: new Array(),
     links: new Array()
   },
+  getters: {
+    customExecute: state => {
+      return state.customExecute;
+    },
+
+  },
   mutations: {
-    setParams(context, args) {
-      const params = args.params.split(" ");
-      context.params = params;
-      //console.log(context.params);
-      console.log("Params Set!  :" + context.params.toString());
+
+    // CE = customExecute
+    SET_CE_INPUT: (state, value) => {
+      state.customExecute.input = value;
+    },
+
+    SET_CE_USECURRENT: (state, value) => {
+      state.customExecute.useCurrent = value;
     },
 
     getLink(context, args) {
@@ -28,7 +38,7 @@ export default new Vuex.Store({
       console.log(context.links);
     },
 
-    addEvent(context, args) {
+    addEvent(context, ...args) {
       //TODO: Implement lol
 
 
@@ -41,10 +51,21 @@ export default new Vuex.Store({
     },
   },
   actions: {
+
+    setCustomExecute: ({commit, state}, newValue) => {
+      commit('SET_CE_INPUT', newValue);
+      return state.customExecute.input;
+    },
+
+    setUseCurrentLinks: ({commit, state}, newValue) => {
+      commit('SET_CE_USECURRENT', newValue);
+      return state.customExecute.useCurrent;
+    },
+
     updateBin(context) {
       console.log("Updating youtube-dl binary..."),
         //exec(context.state.binary + " " + "-U", (err, stdout, stderr) => {
-        exec(`"${context.state.binary}" -U`, (err, stdout, stderr) => {
+        exec(`${context.state.binary} -U`, (err, stdout, stderr) => {
           if (err) {
             console.error(err.toString());
             return;
@@ -56,6 +77,7 @@ export default new Vuex.Store({
           console.log(stderr);
         });
     },
+
     execute(context) {
       //console.log(context);
 
@@ -79,6 +101,28 @@ export default new Vuex.Store({
           console.log(stdout);
           console.log(stderr);
         });
-    }
+    },
+
+    runCustom(context) {
+
+      const state = context.state.customExecute;
+
+      const links = state.useCurrent ? context.state.links.join(" ") : "";
+
+      exec(`${context.state.binary} ${links} ${state.input}`, (err, stdout, stderr) => {
+
+        if (err) {
+          console.log(err.toString());
+          return;
+        }
+
+        context.state.events.push(stdout, stderr);
+        console.log(stdout);
+        console.log(stderr);
+
+      });
+
+    },
+
   }
 });

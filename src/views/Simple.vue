@@ -1,8 +1,10 @@
 <template>
    <div id="simpleui">
-      <input id="inputlink" v-model="link" placeholder="Insert URL to load"  />
+      <label for="inputlink">Link
+        <input id="inputlink" name="inputlink" v-model="link" />
+      </label>
       <div id="buttons">
-         <button id="launch" @click="execute()">Execute!</button>
+         <button id="launch" @click="execute()">Download</button>
          <button id="update" @click="updateBin()">Update</button>
       </div>
    </div>
@@ -31,9 +33,6 @@ export default {
 </script>
 
 <style scoped>
-#inputlink {
-  text-align:center;
-}
 
 #launch {
   background-color:lightgreen;

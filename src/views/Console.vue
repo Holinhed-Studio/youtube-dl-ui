@@ -21,8 +21,7 @@ export default {
 
    },
    mounted() {
-      //console.log("EVENT LOG");
-      document.title = "EVENT LOG"
+      
    }
 }
 </script>

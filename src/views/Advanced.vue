@@ -1,17 +1,19 @@
 <template>
    <div id="advancedMenu">
-      <customParams />
+      <hr />
+      <customExecute />
+      <hr />
       <button @click="openLog()">Open Event Log</button>
    </div>
 </template>
 
 <script>
-import customParams from '@/components/customParams.vue';
+import customExecute from '@/components/customExecute.vue';
 
 export default {
    name: "advanced",
    components: {
-      customParams,
+      customExecute,
    },
    data() {
       return {
@@ -21,7 +23,7 @@ export default {
    methods: {
 
       openLog() {
-         window.open("http://localhost:8080/#/eventlog");
+         window.open("/#/eventlog", "EVENT LOG");
       },
 
    }
