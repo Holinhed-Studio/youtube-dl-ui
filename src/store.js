@@ -5,10 +5,13 @@ Vue.use(Vuex);
 
 const { exec } = require("child_process");
 
+const os = require('os');
+const binname = os.platform === 'win32' ? 'youtube-dl.exe' : 'youtube-dl';
+
 export default new Vuex.Store({
   state: {
     //TODO: make this get path from a config file.
-    binary: '"./bin/youtube-dl.exe"',
+    binary: `"./bin/${binname}"`,
     simpleUI: true,
     customExecute: { input: "", useCurrent: true },
     params: new Array(),
